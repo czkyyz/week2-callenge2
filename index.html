@@ -1,1 +1,15 @@
-<h1>{{ title }}</h1>
+{% extends 'base.html' %}
+
+{% block title %}
+ARTICAL:
+{% endblock %}
+
+{% block body %}
+  {% for f in files %}
+    <p>
+      <a href="{{ url_for('file',file_id=f.id)}}">
+          {{ f.title }}
+      </a>
+    </p>
+  {% endfor %}
+{% endblock %}
